@@ -1,7 +1,6 @@
 // Dashboard logic to fetch and render student data
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
     const token = localStorage.getItem('studentToken');
-    const studentName = localStorage.getItem('studentName');
 
     // Security Check: Redirect to login if no token is found
     if (!token) {
@@ -9,51 +8,42 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
-    // Set student name in the navigation bar
-    if (studentName) {
-        document.getElementById('student-name').textContent = studentName;
-    }
-
     // Logout handling
     document.getElementById('logout-btn').addEventListener('click', () => {
         localStorage.removeItem('studentToken');
-        localStorage.removeItem('studentName');
         window.location.href = '/index.html'; // Redirect to home page
     });
 
     // Fetch and populate dashboard data
-    fetchDashboardData(token);
-});
-
-/**
- * Fetch all required data for the dashboard from the API
- * @param {string} token - The JWT token for authorization
- */
-async function fetchDashboardData(token) {
     try {
-        const response = await fetch('/api/student/data', {
-            headers: {
-                'Authorization': `Bearer ${token}`
-            }
+        // 1. Fetch Student Profile info
+        const meResponse = await fetch('/api/student/me', {
+            headers: { 'Authorization': `Bearer ${token}` }
         });
-
-        if (response.status === 401 || response.status === 403) {
-            // Token is expired or invalid
-            localStorage.removeItem('studentToken');
-            window.location.href = '/espace-eleve.html';
+        
+        if (meResponse.status === 401 || meResponse.status === 403) {
+            handleAuthError();
             return;
         }
 
-        if (!response.ok) {
-            throw new Error('Erreur lors de la récupération des données.');
-        }
+        const student = await meResponse.json();
+        document.getElementById('student-name').textContent = student.name;
 
-        const data = await response.json();
-        
+        // 2. Fetch other data in parallel
+        const [scheduleRes, homeworkRes, gradesRes] = await Promise.all([
+            fetch('/api/student/schedule', { headers: { 'Authorization': `Bearer ${token}` } }),
+            fetch('/api/student/homework', { headers: { 'Authorization': `Bearer ${token}` } }),
+            fetch('/api/student/grades', { headers: { 'Authorization': `Bearer ${token}` } })
+        ]);
+
+        const schedule = await scheduleRes.json();
+        const homework = await homeworkRes.json();
+        const grades = await gradesRes.json();
+
         // Render data into the DOM
-        renderSchedule(data.schedule);
-        renderHomework(data.homework);
-        renderGrades(data.grades);
+        renderSchedule(schedule);
+        renderHomework(homework);
+        renderGrades(grades);
 
     } catch (error) {
         console.error("Fetch Error:", error);
@@ -62,6 +52,11 @@ async function fetchDashboardData(token) {
         document.getElementById('homework-container').innerHTML = errorHtml;
         document.getElementById('grades-container').innerHTML = errorHtml;
     }
+});
+
+function handleAuthError() {
+    localStorage.removeItem('studentToken');
+    window.location.href = '/espace-eleve.html';
 }
 
 function renderSchedule(scheduleData) {

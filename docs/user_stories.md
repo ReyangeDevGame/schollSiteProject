@@ -35,3 +35,16 @@
 2. **Chiffres Clés :** Affichage de statistiques (ex: Taux de réussite, effectifs).
 3. **Présentation :** Bloc "Qui sommes-nous ?" présentant la mission de l'école.
 4. **Design Premium :** Utilisation d'animations fluides au scroll.
+
+## US-04 : Socle Backend et Authentification Sécurisée
+
+**En tant que** parent d'élève ou enseignant,
+**Je veux** m'authentifier sur une plateforme sécurisée
+**Afin de** protéger mes données personnelles et scolaires contre tout accès non autorisé.
+
+### Critères d'Acceptation :
+1. **Infrastructure :** Un véritable serveur backend est opérationnel (Node.js/Express ou équivalent).
+2. **Persistence :** Une base de données est connectée pour stocker les utilisateurs (élèves et enseignants).
+3. **Sécurité (Hachage) :** Les mots de passe ne sont pas stockés en clair mais hachés (ex: avec `bcrypt`).
+4. **Authentification :** Le système de login de l'US-01 est migré pour utiliser cette nouvelle infrastructure réelle au lieu du mock.
+5. **Gestion de session :** Utilisation de tokens sécurisés (JWT ou sessions) pour maintenir la connexion.

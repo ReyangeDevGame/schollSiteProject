@@ -1,39 +1,46 @@
 const express = require('express');
 const router = express.Router();
-const jwt = require('jsonwebtoken');
 const db = require('../db');
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 
-// Secret for JWT (in production, use environment variables)
-const SECRET_KEY = "super_secret_school_key";
+const SECRET_KEY = process.env.JWT_SECRET || 'votre_cle_secrete_super_securisee';
 
-// Endpoint to authenticate student
+// Login route
 router.post('/login', (req, res) => {
-    const { matricule, pin } = req.body;
+    const { username, password } = req.body;
 
-    if (!matricule || !pin) {
-        return res.status(400).json({ error: "Le matricule et le code PIN sont requis." });
+    if (!username || !password) {
+        return res.status(400).json({ message: "Veuillez fournir un matricule et un mot de passe." });
     }
 
-    // Check credentials in DB
-    db.get(`SELECT * FROM students WHERE matricule = ? AND pin = ?`, [matricule, pin], (err, row) => {
+    db.get('SELECT * FROM users WHERE username = ?', [username], async (err, user) => {
         if (err) {
-            console.error("Database error during login:", err);
-            return res.status(500).json({ error: "Erreur interne du serveur." });
+            return res.status(500).json({ message: "Erreur serveur." });
         }
 
-        if (row) {
-            // Generate a JWT token
-            const token = jwt.sign(
-                { matricule: row.matricule, name: row.name, class: row.class }, 
-                SECRET_KEY, 
-                { expiresIn: '2h' }
-            );
-            
-            // Send back token and basic user info
-            res.json({ token, student: { name: row.name, class: row.class } });
-        } else {
-            res.status(401).json({ error: "Identifiants incorrects." });
+        if (!user) {
+            return res.status(401).json({ message: "Identifiants incorrects." });
         }
+
+        // Compare password with hash
+        const isMatch = await bcrypt.compare(password, user.password_hash);
+        if (!isMatch) {
+            return res.status(401).json({ message: "Identifiants incorrects." });
+        }
+
+        // Generate JWT
+        const token = jwt.sign(
+            { id: user.id, username: user.username, role: user.role },
+            SECRET_KEY,
+            { expiresIn: '1h' }
+        );
+
+        res.json({
+            message: "Connexion réussie",
+            token: token,
+            role: user.role
+        });
     });
 });
 

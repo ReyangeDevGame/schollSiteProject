@@ -21,3 +21,9 @@ Créer la vitrine en ligne de l'école pour centraliser et faciliter l'accès au
 - **Emploi du temps :** Consultation de la grille hebdomadaire complète des cours.
 - **Devoirs :** Liste des travaux à faire avec dates limites et alertes pour les urgences.
 - **Notes et Résultats :** Affichage des notes, moyennes par matière, rang de l'élève et appréciations des professeurs.
+
+## 4. Contraintes et Architecture Technique
+- **Backend & BDD :** Mise en place d'un véritable serveur (ex: Node.js, PHP ou Django) avec une base de données persistante pour stocker les informations des élèves, les notes et les devoirs.
+- **Sécurité :** Système d'authentification robuste avec hachage sécurisé des mots de passe.
+- **Administration :** Création d'un panel administrateur dédié aux enseignants pour la saisie et la mise à jour des notes et du programme de devoirs.
+- **Déploiement :** Le site doit être prêt pour un hébergement professionnel (OVH, Infomaniak ou serveur dédié).

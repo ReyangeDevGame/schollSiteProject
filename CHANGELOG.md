@@ -7,13 +7,27 @@ Le format est basé sur [Keep a Changelog](https://keepachangelog.com/fr/1.0.0/)
 ## [Unreleased]
 
 ### Ajouté
+- (En attente de la prochaine User Story)
+
+---
+
+## [v0.2.0] - 2026-05-04
+
+### Ajouté
 - **US-02 : Carrousel de la Page d'Accueil**
   - Spécifications techniques pour la fonctionnalité (`docs/specs/US02_spec.md`).
   - Structure HTML du carrousel intégrée dans `public/index.html`.
-  - Styles premium animés dans `public/css/carousel.css` (transitions, indicateurs, boutons de navigation).
-  - Logique de défilement automatique et manuel en Vanilla JS (`public/js/carousel.js`).
-  - Images d'illustration fictives intégrées dans `public/assets/images/carousel/`.
-  - Validation QA réussie (Tests fonctionnels passés avec succès).
+  - Styles premium animés dans `public/css/carousel.css`.
+  - Logique de défilement automatique et manuel en Vanilla JS.
+- **US-03 : Contenu Informationnel de la Page d'Accueil**
+  - Implémentation des sections Hero, Statistiques et "À propos".
+  - Refonte du design system pour une identité visuelle "Collège Les Elysées".
+  - Animations fluides au scroll.
+- **US-04 : Socle Backend et Authentification Sécurisée**
+  - Migration vers un stockage persistant avec SQLite.
+  - Hachage des mots de passe avec Bcrypt.
+  - Authentification par JSON Web Tokens (JWT).
+  - Refactorisation complète de l'API (routes/middleware/db).
 
 ---
 

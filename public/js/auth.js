@@ -22,24 +22,26 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.textContent = "Connexion en cours...";
 
             try {
-                // Call the auth API
+                // Call the auth API (US-04: uses username/password mapping)
                 const response = await fetch('/api/auth/login', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify({ matricule, pin })
+                    body: JSON.stringify({ 
+                        username: matricule, 
+                        password: pin 
+                    })
                 });
 
                 const data = await response.json();
 
                 if (!response.ok) {
-                    throw new Error(data.error || "Une erreur est survenue lors de la connexion.");
+                    throw new Error(data.message || "Identifiants incorrects.");
                 }
 
-                // Authentication successful: Save token and user data locally
+                // Authentication successful: Save JWT token
                 localStorage.setItem('studentToken', data.token);
-                localStorage.setItem('studentName', data.student.name);
 
                 // Redirect to the dashboard
                 window.location.href = '/dashboard.html';
