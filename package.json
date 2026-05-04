@@ -1,0 +1,16 @@
+{
+  "name": "site-ecole",
+  "version": "1.0.0",
+  "description": "Système de l'école avec espace élève",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "node --watch server/server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "sqlite3": "^5.1.7"
+  }
+}

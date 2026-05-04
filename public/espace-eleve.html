@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion - Espace Élève</title>
+    <meta name="description" content="Connectez-vous à l'espace privé de l'élève pour consulter vos informations scolaires.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="auth-bg">
+    <div class="glass-card login-card">
+        <h2>Espace Élève</h2>
+        <p class="subtitle">Veuillez vous identifier</p>
+        
+        <form id="login-form">
+            <div class="input-group">
+                <label for="matricule">Numéro de Matricule</label>
+                <input type="text" id="matricule" placeholder="Ex: ELEVE123" autocomplete="username" required>
+            </div>
+            <div class="input-group">
+                <label for="pin">Code Secret (PIN)</label>
+                <input type="password" id="pin" placeholder="••••" autocomplete="current-password" required>
+            </div>
+            
+            <div id="error-message" class="error-text hidden" aria-live="polite"></div>
+            
+            <button type="submit" class="btn primary-btn w-100">Se connecter</button>
+        </form>
+        
+        <a href="/index.html" class="back-link">Retour à l'accueil</a>
+    </div>
+
+    <!-- Script for handling authentication logic -->
+    <script src="/js/auth.js"></script>
+</body>
+</html>

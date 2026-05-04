@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau de Bord - Espace Élève</title>
+    <meta name="description" content="Consultez votre emploi du temps, vos devoirs et vos notes.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="dashboard-bg">
+    <nav class="glass-nav">
+        <div class="nav-brand">Mon Espace Scolaire (<span id="student-name">...</span>)</div>
+        <button id="logout-btn" class="btn logout-btn">Déconnexion</button>
+    </nav>
+
+    <div class="dashboard-container">
+        <!-- Emploi du temps widget -->
+        <section class="glass-card dashboard-widget">
+            <h3>📅 Emploi du Temps</h3>
+            <div id="schedule-container" class="widget-content">
+                <div class="loader"></div>
+            </div>
+        </section>
+
+        <!-- Devoirs widget -->
+        <section class="glass-card dashboard-widget">
+            <h3>📝 Devoirs Programmés</h3>
+            <div id="homework-container" class="widget-content">
+                <div class="loader"></div>
+            </div>
+        </section>
+
+        <!-- Notes widget -->
+        <section class="glass-card dashboard-widget">
+            <h3>🎯 Notes Récentes</h3>
+            <div id="grades-container" class="widget-content">
+                <div class="loader"></div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Script for fetching and displaying data -->
+    <script src="/js/dashboard.js"></script>
+</body>
+</html>
