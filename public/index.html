@@ -3,24 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>École d'Excellence - Accueil</title>
-    <meta name="description" content="Bienvenue sur le site officiel de l'École d'Excellence. Découvrez notre établissement.">
+    <title>Collège Les Elysées - Accueil | Abidjan, Abobo</title>
+    <meta name="description" content="Bienvenue sur le site officiel du Collège Les Elysées, situé à Abidjan, Commune d'Abobo, rue T213. Découvrez notre établissement.">
     <!-- Google Fonts for modern typography -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/carousel.css">
 </head>
 <body class="home-bg">
     <div class="glass-container">
         <header>
-            <h1>École d'Excellence</h1>
-            <p>Construisons l'avenir, ensemble.</p>
+            <h1>Collège Les Elysées</h1>
+            <p>Abidjan, Commune d'Abobo &mdash; Rue T213</p>
+            <p class="tagline">Construisons l'avenir, ensemble.</p>
         </header>
         <main>
-            <div class="actions">
+            <!-- Carrousel d'images -->
+            <div class="carousel-container">
+                <div class="carousel-slide fade">
+                    <img src="/assets/images/carousel/slide1.jpg" alt="Façade de l'école">
+                </div>
+                <div class="carousel-slide fade">
+                    <img src="/assets/images/carousel/slide2.jpg" alt="Salle de classe moderne">
+                </div>
+                <div class="carousel-slide fade">
+                    <img src="/assets/images/carousel/slide3.jpg" alt="Bibliothèque">
+                </div>
+                
+                <!-- Navigation -->
+                <a class="carousel-prev" onclick="changeSlide(-1)">&#10094;</a>
+                <a class="carousel-next" onclick="changeSlide(1)">&#10095;</a>
+            </div>
+            
+            <div class="carousel-dots">
+                <span class="dot" onclick="currentSlide(1)"></span> 
+                <span class="dot" onclick="currentSlide(2)"></span> 
+                <span class="dot" onclick="currentSlide(3)"></span> 
+            </div>
+
+            <div class="actions" style="margin-top: 1.5rem;">
                 <a href="/espace-eleve.html" class="btn primary-btn">Accéder à l'Espace Élève</a>
                 <a href="#" class="btn secondary-btn">Découvrir l'établissement</a>
             </div>
         </main>
     </div>
+    <script src="/js/carousel.js"></script>
 </body>
 </html>

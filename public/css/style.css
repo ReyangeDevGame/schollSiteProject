@@ -117,7 +117,33 @@ h3 {
 p {
     font-size: 1.125rem;
     color: var(--text-muted);
+    margin-bottom: 0.5rem;
+}
+
+/* Tagline sous l'adresse sur la page d'accueil */
+.tagline {
+    font-size: 1rem;
+    color: rgba(148, 163, 184, 0.7);
+    margin-top: 0.25rem;
     margin-bottom: 2rem;
+    font-style: italic;
+}
+
+/* Badge nom de l'école affiché en haut du formulaire de connexion */
+.school-badge {
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--primary);
+    background: rgba(99, 102, 241, 0.1);
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    border-radius: 20px;
+    padding: 0.4rem 1rem;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+    width: 100%;
 }
 
 /* Buttons */
