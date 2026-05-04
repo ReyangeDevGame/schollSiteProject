@@ -1,4 +1,14 @@
-# Rétrospective - Sprint 02
+# Rétrospective - Sprint 02 [ARCHIVÉ]
+
+## 🌟 Synthèse Globale du Business Analyst
+Le Sprint 02 a été marqué par une montée en maturité de l'équipe et une identité visuelle renforcée pour le **Collège Les Elysées**. L'US-02 (Carrousel) a été livrée avec succès en pur Vanilla JS/CSS, prouvant que la simplicité technique est souvent gage de fiabilité. Les leçons du Sprint 01 (gestion de Git et des processus) ont été parfaitement intégrées.
+
+**Points de vigilance et Plan d'Action (Sprint 03) :**
+1. **Coordination Design/Dev (Architect/Coder) :** Instaurer un "sign-off" explicite sur les choix techniques de détail (ex: opacity vs display) avant le codage pour éviter les divergences.
+2. **Qualité et Intégrité (QA/DevOps) :** Automatiser la détection des régressions HTML (balises orphelines) et la vérification de l'existence des assets (images manquantes comme slide1.jpg) via des hooks de pré-commit ou des scripts de validation simple.
+3. **Stabilité des Tests :** Explorer des outils de test E2E plus stables (Playwright/Puppeteer) pour réduire la dépendance aux validations manuelles répétitives.
+
+---
 
 ## Questions Clés pour le Bilan
 1. **Succès :** Qu'est-ce qui a bien fonctionné dans la livraison du carrousel et de l'intégration visuelle de la page d'accueil ?

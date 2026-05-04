@@ -1,12 +1,22 @@
 # Product Backlog
 
 ## Sprint Actuel / À Faire
-- [ ] Mettre en place la structure initiale du projet (fichiers de base).
-- [ ] Maquetter et développer la page d'accueil (carrousel d'images, présentation, navigation vers les services).
-- [ ] Créer les pages d'informations statiques : Tarifs et Inscriptions, Contact.
-- [ ] Créer l'interface pour consulter les emplois du temps généraux des classes.
+- [ ] **US-03 : Contenu de la Page d'Accueil (Hero & Chiffres clés)**
 
 ## Icebox (Idées brutes & Fonctionnalités à affiner)
-- **Intégration BDD École :** Connecter le site à la base de données de l'école pour remonter les informations par matricule (Notes, Devoirs, Emploi du temps spécifique). *Nécessite d'étudier l'architecture de la BDD actuelle.*
-- **Sécurisation de l'espace élève :** Envisager l'ajout d'un mot de passe ou d'un code PIN en plus du matricule pour garantir la confidentialité des notes.
-- **Panel d'Administration (CMS) :** Permettre au personnel de l'école de modifier facilement les images du carrousel, les tarifs et les emplois du temps sans faire appel à un développeur.
+
+### Espace Public
+- **Page Services :** Intégration des détails pour Cantine, Transport, Bibliothèque, Sport, Infirmerie, Ateliers.
+- **Page Galerie :** Mise en place d'une galerie photo dynamique.
+- **Page Actualités :** Système de publication des dernières nouvelles.
+- **Page Contact :** Formulaire de contact et organigramme de la direction.
+
+### Portail Parents (US-04 et suivantes)
+- **Dashboard Parent :** Vue d'ensemble après connexion.
+- **Module Emploi du Temps :** Grille hebdomadaire complète.
+- **Module Devoirs :** Liste avec alertes et dates limites.
+- **Module Notes :** Bulletin détaillé avec moyennes, rangs et appréciations.
+
+### Technique
+- **Pipeline CI/CD :** Automatisation des tests et du déploiement.
+- **Sécurisation avancée :** Double authentification ou gestion des mots de passe oubliés.

@@ -11,42 +11,91 @@
     <link rel="stylesheet" href="/css/carousel.css">
 </head>
 <body class="home-bg">
-    <div class="glass-container">
-        <header>
-            <h1>Collège Les Elysées</h1>
-            <p>Abidjan, Commune d'Abobo &mdash; Rue T213</p>
-            <p class="tagline">Construisons l'avenir, ensemble.</p>
-        </header>
-        <main>
-            <!-- Carrousel d'images -->
-            <div class="carousel-container">
-                <div class="carousel-slide fade">
-                    <img src="/assets/images/carousel/slide1.jpg" alt="Façade de l'école">
-                </div>
-                <div class="carousel-slide fade">
-                    <img src="/assets/images/carousel/slide2.jpg" alt="Salle de classe moderne">
-                </div>
-                <div class="carousel-slide fade">
-                    <img src="/assets/images/carousel/slide3.jpg" alt="Bibliothèque">
-                </div>
-                
-                <!-- Navigation -->
-                <a class="carousel-prev" onclick="changeSlide(-1)">&#10094;</a>
-                <a class="carousel-next" onclick="changeSlide(1)">&#10095;</a>
+    <nav class="navbar">
+        <div class="nav-brand">Collège Les Elysées</div>
+        <ul class="nav-links">
+            <li><a href="#">Accueil</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Galerie</a></li>
+            <li><a href="#">Actualités</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <a href="/espace-eleve.html" class="btn secondary-btn" style="border: 1px solid rgba(255,255,255,0.3); padding: 0.5rem 1rem;">Espace Parents</a>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <span style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; background: rgba(255,255,255,0.1); padding: 0.4rem 1rem; border-radius: 20px; margin-bottom: 2rem; display: inline-block;">Fondée en 1978 · Établissement Public</span>
+            <h1>Bienvenue au Collège Les Elysées</h1>
+            <p>Un lieu d'apprentissage, d'épanouissement et de réussite pour chaque élève. Ensemble, construisons l'avenir.</p>
+            <div class="actions">
+                <a href="#" class="btn primary-btn" style="background: rgba(255,255,255,0.1); border: 1px solid var(--white); box-shadow: none;">Nos services</a>
+                <a href="/espace-eleve.html" class="btn primary-btn" style="background: var(--white); color: var(--primary);">Portail parents &rarr;</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="stats-section">
+        <div class="stat-item">
+            <span class="stat-number">680</span>
+            <span class="stat-label">Élèves inscrits</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number">42</span>
+            <span class="stat-label">Enseignants</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number">24</span>
+            <span class="stat-label">Classes</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number">96%</span>
+            <span class="stat-label">Taux de réussite</span>
+        </div>
+    </section>
+
+    <section class="about-section">
+        <h2>Notre établissement</h2>
+        <p>Un environnement scolaire moderne et bienveillant au cœur d'Abobo, Abidjan.</p>
+        
+        <div class="about-grid">
+            <div class="about-card">
+                <div class="card-icon">📚</div>
+                <h3>Excellence académique</h3>
+                <p>Des programmes adaptés à chaque niveau pour accompagner chaque élève vers la réussite.</p>
+            </div>
+            <div class="about-card">
+                <div class="card-icon">🌱</div>
+                <h3>Épanouissement personnel</h3>
+                <p>Activités parascolaires, sport, arts et clubs pour développer tous les talents.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-container" style="background: var(--white); padding-top: 0;">
+        <h2 style="text-align: center; margin-bottom: 3rem;">Galerie</h2>
+        <!-- Carrousel d'images (US-02) -->
+        <div class="carousel-container">
+            <div class="carousel-slide fade">
+                <img src="/assets/images/carousel/slide1.jpg" alt="Façade de l'école">
+            </div>
+            <div class="carousel-slide fade">
+                <img src="/assets/images/carousel/slide2.jpg" alt="Salle de classe moderne">
+            </div>
+            <div class="carousel-slide fade">
+                <img src="/assets/images/carousel/slide3.jpg" alt="Bibliothèque">
             </div>
             
-            <div class="carousel-dots">
-                <span class="dot" onclick="currentSlide(1)"></span> 
-                <span class="dot" onclick="currentSlide(2)"></span> 
-                <span class="dot" onclick="currentSlide(3)"></span> 
-            </div>
-
-            <div class="actions" style="margin-top: 1.5rem;">
-                <a href="/espace-eleve.html" class="btn primary-btn">Accéder à l'Espace Élève</a>
-                <a href="#" class="btn secondary-btn">Découvrir l'établissement</a>
-            </div>
-        </main>
-    </div>
+            <a class="carousel-prev" onclick="changeSlide(-1)">&#10094;</a>
+            <a class="carousel-next" onclick="changeSlide(1)">&#10095;</a>
+        </div>
+        
+        <div class="carousel-dots">
+            <span class="dot" onclick="currentSlide(1)"></span> 
+            <span class="dot" onclick="currentSlide(2)"></span> 
+            <span class="dot" onclick="currentSlide(3)"></span> 
+        </div>
+    </section>
     <script src="/js/carousel.js"></script>
 </body>
 </html>

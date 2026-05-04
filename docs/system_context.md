@@ -7,9 +7,17 @@ Créer la vitrine en ligne de l'école pour centraliser et faciliter l'accès au
 - **Le grand public :** Toute personne cherchant des informations générales sur l'établissement, son fonctionnement ou sa localisation.
 - **Les parents d'élèves :** Pour le suivi scolaire, les démarches administratives, l'accès aux plannings et les informations spécifiques à leurs enfants.
 
-## 3. Fonctionnalités Clés
-- **Présentation de l'école :** Page d'accueil avec informations essentielles et carrousel d'images.
-- **Tarifs et Inscriptions :** Section détaillant les coûts et les procédures/moyens pour s'inscrire.
-- **Contact :** Informations claires sur la façon de joindre l'administration de l'école.
-- **Emplois du temps publics :** Accès libre ou structuré aux emplois du temps généraux des différentes classes.
-- **Espace Privé (Suivi Élève) :** Une section permettant la saisie d'un matricule élève pour accéder à des données personnalisées (emploi du temps individuel, programme des devoirs de la classe, notes). *Cette fonctionnalité requiert la connexion de l'application web à la base de données existante de l'école.*
+## 3. Fonctionnalités Détaillées
+
+### Espace Public (Navigation principale)
+- **Accueil :** Section Hero (accroche), Chiffres clés (ex: nombre d'élèves, taux de réussite), et présentation générale de l'établissement.
+- **Services :** Informations sur la cantine, le transport scolaire, la bibliothèque, le sport, l'infirmerie et les ateliers.
+- **Galerie :** Album photos des infrastructures et des événements de l'école.
+- **Actualités :** Flux des dernières nouvelles et annonces.
+- **Contact :** Coordonnées complètes, organigramme (Direction, Secrétariat).
+
+### Portail Parents (Espace sécurisé)
+- **Connexion sécurisée :** Authentification par matricule (Identifiant de test : `EL-2024-0342`).
+- **Emploi du temps :** Consultation de la grille hebdomadaire complète des cours.
+- **Devoirs :** Liste des travaux à faire avec dates limites et alertes pour les urgences.
+- **Notes et Résultats :** Affichage des notes, moyennes par matière, rang de l'élève et appréciations des professeurs.
